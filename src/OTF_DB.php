@@ -3,7 +3,7 @@ namespace shankarbala33\db_explorer;
 
 
 use Illuminate\Database\Eloquent\Model;
-use App\Facades\OTF as OTF_Facade;
+use shankarbala33\db_explorer\Facades\OTF as OTF_Facade;
 
 
 /**
