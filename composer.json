@@ -1,5 +1,5 @@
 {
-  "name": "shankarbala33/DB_Explorer",
+  "name": "shankarbala33/db_explorer",
   "type": "library",
   "description": "Complete Database Explorer",
   "keywords": ["database","tables","mysql","table view"],
@@ -14,6 +14,6 @@
   },
 
   "autoload": {
-    "psr-4": { "shankarbala33\\DB_Explorer": "src" }
+    "psr-4": { "shankarbala33\\db_explorer": "src" }
   }
 }
