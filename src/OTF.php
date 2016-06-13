@@ -1,5 +1,5 @@
 <?php
-namespace App\Helper;
+namespace shankarbala33\db_explorer;
 
 use Config;
 use DB;
