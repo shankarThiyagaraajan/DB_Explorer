@@ -11,6 +11,8 @@ Currently available database schema's are,
 
 **Sample Code :**
 
+	"use shankarbala33\db_explorer\OTF_DB;"
+
 Basic DB Connection [MySQL] :
 
     $db_schema = (
