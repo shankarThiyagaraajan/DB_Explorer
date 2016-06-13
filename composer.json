@@ -1,0 +1,19 @@
+{
+  "name": "shankarbala33/DB_Explorer",
+  "type": "library",
+  "description": "Complete Database Explorer",
+  "keywords": ["database","tables","mysql","table view"],
+  "license": "MIT",
+  "authors": [{
+    "name" : "Shankar Thiyagaraajan"
+  }
+  ],
+
+  "require": {
+    "php": "^5.5.9|^7.0"
+  },
+
+  "autoload": {
+    "psr-4": { "shankarbala33\\DB_Explorer": "src" }
+  }
+}
