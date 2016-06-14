@@ -10,8 +10,12 @@
   ],
 
   "require": {
+<<<<<<< HEAD
     "php": "^5.5.9|^7.0",
     "illuminate/database" : "5.2.37"
+=======
+    "php": "^5.5.9|^7.0"
+>>>>>>> 2ca891142df462540d2c04068eb0b5e62bf91de2
   },
 
   "autoload": {
