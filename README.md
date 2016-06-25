@@ -26,7 +26,8 @@ Basic DB Connection [MySQL] :
 Scan Database :
  
      $database = new OTF_DB()     
-     $database->scanDatabase($db_schema);
+     $schema = $database->scanDatabase($db_schema);
+	 dd($schema);
 
 **Sample Output :**
 
