@@ -1,13 +1,16 @@
 <?php
+
 namespace shankarbala33\db_explorer;
 
 use Config;
 use DB;
-class OTF {
+
+class OTF
+{
     /**
      * The name of the database we're connecting to on the fly.
      *
-     * @var string $database
+     * @var string
      */
     protected $database;
     /**
@@ -16,10 +19,12 @@ class OTF {
      * @var \Illuminate\Database\Connection
      */
     protected $connection;
+
     /**
      * Create a new on the fly database connection.
      *
-     * @param  array $options
+     * @param array $options
+     *
      * @return void
      */
     public function setDatabase($options = null)
@@ -28,11 +33,10 @@ class OTF {
         $database = $options['database'];
         $this->database = $database;
         // Figure out the driver and get the default configuration for the driver
-        $driver  = isset($options['driver']) ? $options['driver'] : Config::get("database.default");
+        $driver = isset($options['driver']) ? $options['driver'] : Config::get('database.default');
         $default = Config::get("database.connections.$driver");
         // Loop through our default array and update options if we have non-defaults
-        foreach($default as $item => $value)
-        {
+        foreach ($default as $item => $value) {
             $default[$item] = isset($options[$item]) ? $options[$item] : $default[$item];
         }
         // Set the temporary configuration
@@ -42,6 +46,7 @@ class OTF {
 
         return $this;
     }
+
     /**
      * Get the on the fly connection.
      *
@@ -51,10 +56,12 @@ class OTF {
     {
         return $this->connection;
     }
+
     /**
      * Get a table from the on the fly connection.
      *
-     * @var    string $table
+     * @var string
+     *
      * @return \Illuminate\Database\Query\Builder
      */
     public function getTable($table = null)
