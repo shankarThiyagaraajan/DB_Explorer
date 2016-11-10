@@ -29,19 +29,24 @@ class OTF
      */
     public function setDatabase($options = null)
     {
-        // Set the database
-        $database = $options['database'];
+        // Simple Filters.
+        if(is_null($option)) return false;        
+        // Set the database.
+        $database = (isset($options['database']) ? $options['database'] : false);
+        // Simple Filters.
+        if($database == false) return false;
+        
         $this->database = $database;
-        // Figure out the driver and get the default configuration for the driver
+        // Figure out the driver and get the default configuration for the driver.
         $driver = isset($options['driver']) ? $options['driver'] : Config::get('database.default');
         $default = Config::get("database.connections.$driver");
-        // Loop through our default array and update options if we have non-defaults
+        // Loop through our default array and update options if we have non-defaults.
         foreach ($default as $item => $value) {
             $default[$item] = isset($options[$item]) ? $options[$item] : $default[$item];
         }
-        // Set the temporary configuration
+        // Set the temporary configuration.
         Config::set("database.connections.$database", $default);
-        // Create the connection
+        // Create the connection.
         $this->connection = DB::connection($database);
 
         return $this;
@@ -66,6 +71,10 @@ class OTF
      */
     public function getTable($table = null)
     {
+        try{
         return $this->getConnection()->table($table);
+        }catch(Exception $e){
+            // TODO: Handle as you wish.
+        }
     }
 }
