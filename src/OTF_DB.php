@@ -91,7 +91,10 @@ class OTF_DB extends Model
     public static function reConstructTables($tables, $db)
     {
         foreach ($tables as $table) {
-            self::$tables[$table->TABLE_NAME] = self::getColumns($table->TABLE_NAME);
+            // Simple Filters.
+            if(isset(self::$tables[$table->TABLE_NAME]) && isset(self::getColumns($table->TABLE_NAME))){
+               self::$tables[$table->TABLE_NAME] = self::getColumns($table->TABLE_NAME);
+            }
         }
 
         return self::$tables;
@@ -106,6 +109,11 @@ class OTF_DB extends Model
      */
     public static function getTables($config)
     {
+        // Simple Filters.
+        if(!isset($config)) return false;
+        // Simple Filters.
+        if(!isset($config['database'])) return false;
+        
         self::$config = $config;
         $schema = OTF_Facade::setDatabase(self::$config)
             ->getTable('information_schema.tables')
