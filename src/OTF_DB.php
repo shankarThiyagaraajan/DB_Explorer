@@ -65,7 +65,7 @@ class OTF_DB extends Model
      */
     public static function constructDB($config)
     {
-        $Schema = [
+        $schema = [
             'driver'    => $config['name'],
             'host'      => $config['host'],
             'database'  => $config['database'],
@@ -77,7 +77,7 @@ class OTF_DB extends Model
             'strict'    => false,
         ];
 
-        return $Schema;
+        return $schema;
     }
 
     /**
