@@ -30,12 +30,16 @@ class OTF
     public function setDatabase($options = null)
     {
         // Simple Filters.
-        if(is_null($option)) return false;        
+        if (is_null($option)) {
+            return false;
+        }
         // Set the database.
         $database = (isset($options['database']) ? $options['database'] : false);
         // Simple Filters.
-        if($database == false) return false;
-        
+        if ($database == false) {
+            return false;
+        }
+
         $this->database = $database;
         // Figure out the driver and get the default configuration for the driver.
         $driver = isset($options['driver']) ? $options['driver'] : Config::get('database.default');
@@ -71,9 +75,9 @@ class OTF
      */
     public function getTable($table = null)
     {
-        try{
-        return $this->getConnection()->table($table);
-        }catch(Exception $e){
+        try {
+            return $this->getConnection()->table($table);
+        } catch (Exception $e) {
             // TODO: Handle as you wish.
         }
     }
