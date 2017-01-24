@@ -2,6 +2,13 @@
 - 
 Tool for extraxting and analysing the database structure.
 
+## Inatalling
+-
+  
+  **Command Line Installation:**
+      
+       composer require shankarbala33/db_explorer
+
 **Available Schemas**
  
 Currently available database schema's are,
