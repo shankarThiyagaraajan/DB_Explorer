@@ -6,7 +6,7 @@ Tool for extraxting and analysing the database structure.
 
   **Command Line Installation:**
       
-       composer require shankarbala33/db_explorer
+      $ composer require shankarbala33/db_explorer
 -
 
 **Available Schemas**
@@ -24,17 +24,17 @@ Basic DB Connection [MySQL] :
 
     $db_schema = (
 	 "name" => "mysql",
-     "host" => "localhost",
-     "username" => "root",
+         "host" => "localhost",
+         "username" => "root",
   	 "password" => "root",
-     "database" => "wordpress"
+         "database" => "wordpress"
     ); 
 
 Scan Database :
  
      $database = new OTF_DB()     
-     $schema = $database->scanDatabase($db_schema);
-	 dd($schema);
+     $schema = $database->scanDatabase($db_schema); 
+     dd($schema);
 
 **Sample Output :**
 
@@ -78,3 +78,6 @@ Scan Database :
   	"wp_usermeta" => array:4 [▶]
   	"wp_users" => array:10 [▶]
 	] 
+
+## License
+MIT License
