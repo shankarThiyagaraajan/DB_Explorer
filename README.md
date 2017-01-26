@@ -30,7 +30,7 @@ Basic DB Connection [MySQL] :
 	 "database" => "wordpress"
     ); 
 
-Scan Database :
+**Scan Database :**
  
      $database = new OTF_DB()     
      $schema = $database->scanDatabase($db_schema); 
