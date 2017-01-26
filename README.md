@@ -24,10 +24,10 @@ Basic DB Connection [MySQL] :
 
     $db_schema = (
 	 "name" => "mysql",
-         "host" => "localhost",
-         "username" => "root",
-  	 "password" => "root",
-         "database" => "wordpress"
+	 "host" => "localhost",
+	 "username" => "root",
+	 "password" => "root",
+	 "database" => "wordpress"
     ); 
 
 Scan Database :
