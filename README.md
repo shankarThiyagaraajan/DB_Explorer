@@ -7,7 +7,7 @@ Tool for extraxting and analysing the database structure.
   **Command Line Installation:**
       
       $ composer require shankarbala33/db_explorer
--
+
 
 **Available Schemas**
  
