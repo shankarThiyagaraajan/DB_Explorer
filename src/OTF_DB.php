@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use shankarbala33\db_explorer\Facades\OTF as OTF_Facade;
 
 /**
- * Class OTF_DB.
+ * Class OTF_DB [On-The_Fly Database]
  */
 class OTF_DB extends Model
 {
@@ -45,14 +45,22 @@ class OTF_DB extends Model
      */
     public function __construct($config = [])
     {
+        // Configuration setups.
         self::$config = $config;
     }
 
+    /**
+     * To scan database to get Blueprint.
+     */
     public function scanDatabase($connection)
     {
+        // DB Config to scan.
         $db = self::constructDB($connection);
+        
+        // Load table from the scanned Database.
         $tables = self::getTables($db);
 
+        // To ordering the table.
         return self::reConstructTables($tables, $db);
     }
 
@@ -90,6 +98,7 @@ class OTF_DB extends Model
      */
     public static function reConstructTables($tables, $db)
     {
+        // Loop all fetched tables.
         foreach ($tables as $table) {
             // Simple Filters.
             if (isset(self::$tables[$table->TABLE_NAME]) && isset(self::getColumns($table->TABLE_NAME))) {
